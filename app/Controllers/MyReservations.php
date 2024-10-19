@@ -12,26 +12,31 @@ class MyReservations extends Controller
 
     public function index()
     {
+
         if (session()->get("id_user") != "") {
             $reservationModel = new ReservationModel();
             $logementModel = new LogementModel();
             $data["header"] = [];
 
             // Récupération des données de la table 'reservation' :
+
             $queryReservation = $reservationModel->where("id_client", session()->get("id_user"))->get();
             try {
                 $resultReservation = $queryReservation->getResult();
                 if ($resultReservation) {
+
                     foreach ($resultReservation as $rowReservation) {
                         $dataRow = [];
                         $dataRow[] = $rowReservation->date_debut;
                         $dataRow[] = $rowReservation->date_fin;
 
                         // Récupération des données de la table 'logement' :
+
                         $queryLogement = $logementModel->where("id", $rowReservation->id_logement)->get();
                         try {
                             $resultLogement = $queryLogement->getResult();
                             if ($resultLogement) {
+
                                 foreach ($resultLogement as $rowLogement) {
                                     $dataRow[] = $rowLogement->lieu;
                                     $dataRow[] = $rowLogement->taille_logement . "m²";
@@ -46,6 +51,8 @@ class MyReservations extends Controller
                             $dataRow[] = "<div class='reservationNonValidee'> Non validée</div>";
                             $dataRow[] = "<form action='" . site_url("MyReservations/annulerReservation") . "' method='post'><input type='hidden' name='idReservation' value='" . $rowReservation->id . "'><input type='submit' value='Annuler'></form>";
                         } else {
+
+
                             $dataRow[] = "<div class='reservationValidee'>Validée</div>";
                             $dataRow[] = "Impossible";
                         }

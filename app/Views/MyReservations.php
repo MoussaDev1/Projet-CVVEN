@@ -22,6 +22,7 @@
             border-collapse: collapse;
         }
 
+
         table th {
             background-color: #FFAB4A;
         }
@@ -35,6 +36,7 @@
         .reservationNonValidee {
             color: red;
         }
+
 
         .reservationValidee {
             color: green;
@@ -59,11 +61,13 @@
                 <th>Annuler la réservation</th>
             </tr>
             <?php if (isset($header)) : ?>
+
                 <?php foreach ($header as $row1) : ?>
                     <tr>
                         <?php foreach ($row1 as $row2) : ?>
                             <td><?= $row2 ?></td>
                         <?php endforeach; ?>
+
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -72,3 +76,4 @@
 </body>
 
 </html>
+=======
