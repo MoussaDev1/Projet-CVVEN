@@ -1,4 +1,3 @@
-
 ## Project Description
 
 This project is a web application for managing reservations. The main features include:
@@ -22,14 +21,17 @@ This project is a web application for managing reservations. The main features i
 ## Technologies Used
 
 ### **Backend**:
+
 - PHP (CodeIgniter framework)
 
 ### **Database**:
+
 - MySQL
 
-### **Frontend**: 
-  - HTML
-  - CSS (including a custom debug.css file)
-- **Security**: 
+### **Frontend**:
+
+- HTML
+- CSS (including a custom debug.css file)
+- **Security**:
   - Custom authentication system
   - Content Security Policy implementation

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,31 +15,35 @@
             background-color: #f4f4f4;
             height: 100vh;
         }
-        
+
         table {
             width: 70%;
             background-color: #F5F5DC;
             border-collapse: collapse;
         }
-        
+
+
         table th {
             background-color: #FFAB4A;
         }
-        
-        th, td {
+
+        th,
+        td {
             border: 3px solid black;
             text-align: center;
         }
-        
+
         .reservationNonValidee {
             color: red;
         }
-        
+
+
         .reservationValidee {
             color: green;
         }
     </style>
 </head>
+
 <body>
     <?php echo view('templates/header.php'); ?>
     <center>
@@ -56,23 +61,19 @@
                 <th>Annuler la réservation</th>
             </tr>
             <?php if (isset($header)) : ?>
-                <?php foreach($header as $row1) : ?>
+
+                <?php foreach ($header as $row1) : ?>
                     <tr>
-                        <?php foreach($row1 as $row2) : ?>
+                        <?php foreach ($row1 as $row2) : ?>
                             <td><?= $row2 ?></td>
                         <?php endforeach; ?>
-                        <!-- Remplacer le bouton par un lien -->
-                        <td>
-                            <?php if ($row1[6] === "<div class='reservationNonValidee'> Non validée</div>") : ?>
-                                <a href="<?= base_url('MyReservations/contactez-administration?idReservation='.$row1[7]) ?>">Annuler</a>
-                            <?php else : ?>
-                                Impossible
-                            <?php endif; ?>
-                        </td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
         </table>
     </center>
 </body>
+
 </html>
+=======
