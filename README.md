@@ -16,7 +16,7 @@ This project is a web application for managing reservations. The main features i
 
 - **User Authentication and Security**: Secure user registration, login, and password reset functionalities with implemented content security policies.
 - **Reservation Management**: Create and manage reservations with dedicated models and controllers.
-- **Administrative Functions**: Admin panel for overseeing user activities, content management, and application configuration.
+- **Administrative Functions**: Admin panel for overseeing users activities, content management, and application configuration.
 
 ## Technologies Used
 
